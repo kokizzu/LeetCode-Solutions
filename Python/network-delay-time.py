@@ -40,7 +40,7 @@ def find_partitions(PRG, brackets):  # Time: O(K)
     # split to 4 regions 
     return [0, 1, 2, 3]
 
-def regions(find_partitions, s):  # Time: O(K)
+def regions(partitions, s):  # Time: O(K)
     return s
 
 def recurse(PRG, L, R, P, lookup, brackets, s, e):  # run at most O(KlogK) in each depth, at most logK depth
