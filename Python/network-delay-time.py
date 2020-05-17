@@ -48,8 +48,8 @@ def recurse(PRG, L, R, P, lookup, brackets, s, e):  # run at most O(KlogK) in ea
         return 0
     partitions = find_partitions(PRG, brackets)
     for i in partitions:
-        if i in lookup:  # any exists then break
-            break
+        if i in lookup:  # (0, len(PRG)-1) may be in lookup, but others may not yet
+            continue
         # new_brackets = "(" + bracket[i:j] + ")"
         lookup[i] = dijkstra(PRG, L, R, P, lookup, brackets, i)
     a, b = regions(partitions, s), regions(partitions, e)  # find s, e in which A, B, C, D, E
