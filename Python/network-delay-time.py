@@ -58,7 +58,7 @@ def recurse(PRG, L, R, P, lookup, brackets, s, e):  # run at most O(KlogK) in ea
         new_brackets = brackets
         return recurse(PRG, L, R, P, lookup, new_brackets, s, e)
     c = max(a, b)
-    return min(lookup[c][s, c] + lookup[c][c, e])
+    return min(lookup[c][s, c] + lookup[c][c, e]) # find min of entering left or right
 
 def emacs():
     K, Q = map(int, raw_input().strip().split())
