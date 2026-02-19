@@ -4,7 +4,7 @@
 import collections
 
 
-# two pointers, mono deque, bitmasks, prefix sum, trie
+# two pointers, mono deque, bitmasks, prefix sum, hash table
 class Solution(object):
     def maxXor(self, nums, k):
         """
