@@ -323,7 +323,7 @@
 3559 | [Number of Ways to Assign Edge Weights II](https://leetcode.com/problems/number-of-ways-to-assign-edge-weights-ii/)| [C++](./C++/number-of-ways-to-assign-edge-weights-ii.cpp) [Python](./Python/number-of-ways-to-assign-edge-weights-ii.py)| _O(n + q)_ | _O(n + q)_ | Medium | | Tree, DFS, `Tarjan's Offline LCA Algorithm`, Combinatorics |
 3585 | [Find Weighted Median Node in Tree](https://leetcode.com/problems/find-weighted-median-node-in-tree/)| [C++](./C++/find-weighted-median-node-in-tree.cpp) [Python](./Python/find-weighted-median-node-in-tree.py)| _O(n + qlogh)_ | _O(n + q)_ | Hard | | Tree, DFS, `Tarjan's Offline LCA Algorithm`, Binary Search, Prefix Sum |
 3715 | [Sum of Perfect Square Ancestors](https://leetcode.com/problems/sum-of-perfect-square-ancestors/)| [C++](./C++/sum-of-perfect-square-ancestors.cpp) [Python](./Python/sum-of-perfect-square-ancestors.py)| precompute: _O(r)_<br>runtime: _O(nlogx)_ | _O(r + n)_ | Hard | | Tree, Number Theory, `Linear Sieve of Eratosthenes`, Freq Table, DFS |
-3841 | [Palindromic Path Queries in a Tree](https://leetcode.com/problems/palindromic-path-queries-in-a-tree/)| [C++](./C++/palindromic-path-queries-in-a-tree.cpp) [Python](./Python/palindromic-path-queries-in-a-tree.py)| _O((n + q) * logn)_ | _O(nlogn)_ | Hard | | DFS, LCA, Binary Lifting, BIT, Fenwick Tree |
+3841 | [Palindromic Path Queries in a Tree](https://leetcode.com/problems/palindromic-path-queries-in-a-tree/)| [C++](./C++/palindromic-path-queries-in-a-tree.cpp) [Python](./Python/palindromic-path-queries-in-a-tree.py)| _O((n + q) * logn)_ | _O(n)_ | Hard | | DFS, HLD, Heavy-Light Decomposition, LCA, Binary Lifting, BIT, Fenwick Tree |
 
 <br/>
 <div align="right">
