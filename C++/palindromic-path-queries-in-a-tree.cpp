@@ -41,7 +41,7 @@ public:
                 const auto [step, u, h] = stk.back(); stk.pop_back();
                 if (step == 1) {
                     head[u] = h;
-                    left[u]  = ++idx;
+                    left[u] = ++idx;
                     stk.emplace_back(2, u, h);
                     for (const auto& v : adj[u]) {
                         if (v == parent[u] || v == heavy[u]) {
