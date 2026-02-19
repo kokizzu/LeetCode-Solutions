@@ -1,5 +1,5 @@
-# Time:  O(n)
-# Space: O(1)
+# Time:  O(n + 26)
+# Space: O(26)
 
 # hash table
 KEYBOARD = ("qwertyuiop", "asdfghjkl", "zxcvbnm")
