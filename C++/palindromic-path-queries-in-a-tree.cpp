@@ -5,19 +5,8 @@
 class Solution {
 public:
     vector<bool> palindromePath(int n, vector<vector<int>>& edges, string s, vector<string>& queries) {
-        vector<int> prefix(n);
-        const auto& callback = [&](int u, int p) {
-            prefix[u] = (p != -1 ? prefix[p] : 0) ^ (1 << (s[u] - 'a'));
-        };
-
-        vector<vector<int>> adj(n);
-        for (const auto& e : edges) {
-            adj[e[0]].emplace_back(e[1]);
-            adj[e[1]].emplace_back(e[0]);
-        }
-
-        const auto& build_hld = [&](const auto& cb) {
-            vector<int> parent(n, -1), depth(n, 0), sz(n, 1), heavy(n, -1), head(n);
+        const auto& build_hld = [](const auto& adj, const auto& cb) {
+            vector<int> parent(size(adj), -1), depth(size(adj), 0), sz(size(adj), 1), heavy(size(adj), -1), head(size(adj));
             iota(begin(head), end(head), 0);
             vector<tuple<int, int, int>> stk = {{1, 0, -1}};
             while (!empty(stk)) {
@@ -46,7 +35,7 @@ public:
                 }
             }
             int idx = -1;
-            vector<int> left(n, -1), right(n, -1);
+            vector<int> left(size(adj), -1), right(size(adj), -1);
             stk = {{1, 0, 0}};
             while (!empty(stk)) {
                 const auto [step, u, h] = stk.back(); stk.pop_back();
@@ -70,7 +59,17 @@ public:
             return tuple(parent, depth, head, left, right);
         };
 
-        const auto& [parent, depth, head, left, right] = build_hld(callback);
+        vector<int> prefix(n);
+        const auto& callback = [&](int u, int p) {
+            prefix[u] = (p != -1 ? prefix[p] : 0) ^ (1 << (s[u] - 'a'));
+        };
+
+        vector<vector<int>> adj(n);
+        for (const auto& e : edges) {
+            adj[e[0]].emplace_back(e[1]);
+            adj[e[1]].emplace_back(e[0]);
+        }
+        const auto& [parent, depth, head, left, right] = build_hld(adj, callback);
         const auto& lca = [&](int u, int v) {
             while (head[u] != head[v]) {
                 if (depth[head[u]] < depth[head[v]]) {
