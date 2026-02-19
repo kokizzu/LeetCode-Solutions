@@ -7,7 +7,7 @@ public:
     vector<bool> palindromePath(int n, vector<vector<int>>& edges, string s, vector<string>& queries) {
         vector<int> prefix(n);
         const auto& callback = [&](int u, int p) {
-            prefix[u] = (p != -1 ? prefix[p] : 0) ^ ( 1<< (s[u] - 'a'));
+            prefix[u] = (p != -1 ? prefix[p] : 0) ^ (1 << (s[u] - 'a'));
         };
 
         vector<vector<int>> adj(n);
