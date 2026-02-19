@@ -38,7 +38,7 @@ public:
                 ss >> v;
                 const auto& l = tree_infos.lca(u, v);
                 const auto& val = (prefix[u] ^ bit.query(tree_infos.left(u))) ^ (prefix[v] ^ bit.query(tree_infos.left(v))) ^ (1 << (s[l] - 'a'));
-                result.emplace_back(val == 0 || (val & (val - 1)) == 0);
+                result.emplace_back((val & (val - 1)) == 0);
             }
         }
         return result;
