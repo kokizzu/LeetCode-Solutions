@@ -31,16 +31,12 @@ class Solution(object):
 
 
         def build_hld(adj, cb):
-            parent, depth, size, heavy, head, pos = [-1]*len(adj), [0]*len(adj), [1]*len(adj), [-1]*len(adj), list(range(len(adj))), [-1]*len(adj)
-            idx = -1
-            left, right = [0]*len(adj), [0]*len(adj)
+            parent, depth, size, heavy, head = [-1]*len(adj), [0]*len(adj), [1]*len(adj), [-1]*len(adj), list(range(len(adj)))
             stk = [(1, 0, -1)]
             while stk:
                 step, u, p = stk.pop()
                 if step == 1:
                     cb(u, p)
-                    idx += 1
-                    left[u] = idx
                     parent[u], depth[u] = p, (depth[p]+1 if p != -1 else 0)
                     stk.append((2, u, p))
                     for v in adj[u]:
@@ -48,25 +44,29 @@ class Solution(object):
                             continue
                         stk.append((1, v, u))
                 elif step == 2:
-                    right[u] = idx
                     for v in adj[u]:
                         if v == parent[u]:
                             continue
                         size[u] += size[v]
                         if heavy[u] == -1 or size[v] > size[heavy[u]]:
                             heavy[u] = v
-            idx = 0
-            stk = [(0, 0)]
+            idx = -1
+            left, right = [-1]*len(adj), [-1]*len(adj)
+            stk = [(1, 0, 0)]
             while stk:
-                u, h = stk.pop()
-                head[u], pos[u] = h, idx
-                idx += 1
-                for v in adj[u]:
-                    if v == parent[u] or v == heavy[u]:
-                        continue
-                    stk.append((v, v))
-                if heavy[u] != -1:
-                    stk.append((heavy[u], h))
+                step, u, h = stk.pop()
+                if step == 1:
+                    idx += 1
+                    head[u], left[u] = h, idx
+                    stk.append((2, u, h))
+                    for v in adj[u]:
+                        if v == parent[u] or v == heavy[u]:
+                            continue
+                        stk.append((1, v, v))
+                    if heavy[u] != -1:
+                        stk.append((1, heavy[u], h))
+                elif step == 2:
+                    right[u] = idx
             return parent, depth, head, left, right
     
         def lca(u, v):
