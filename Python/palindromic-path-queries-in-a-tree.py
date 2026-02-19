@@ -67,7 +67,7 @@ class Solution(object):
                     stk.append((v, v))
                 if heavy[u] != -1:
                     stk.append((heavy[u], h))
-            return parent, depth, head, pos, left, right
+            return parent, depth, head, left, right
     
         def lca(u, v):
             while head[u] != head[v]:
@@ -85,7 +85,7 @@ class Solution(object):
             adj[u].append(v)
             adj[v].append(u)
         prefix = [0]*n
-        parent, depth, head, pos, left, right = build_hld(adj, callback)
+        parent, depth, head, left, right = build_hld(adj, callback)
         bit = BIT(n+1)
         result = []
         for q in queries:
