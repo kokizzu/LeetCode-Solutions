@@ -1,7 +1,7 @@
 # Time:  O((n + q) * logn)
-# Space: O(nlogn)
+# Space: O(n)
 
-# dfs, lca, binary lifting, fenwick tree
+# hld, lca, fenwick tree
 class Solution(object):
     def palindromePath(self, n, edges, s, queries):
         """
@@ -30,53 +30,51 @@ class Solution(object):
                 return ret
 
 
-        class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of nodes
-            def __init__(self, adj, cb):  # modified
-                N = len(adj)
-                L, R, D, P = [0]*N, [0]*N, [0]*N, [[] for _ in xrange(N)]
-                idx = -1
-                stk = [(1, (0, -1))]
-                while stk:
-                    step, args = stk.pop()
-                    if step == 1:
-                        u, p = args
-                        cb(u, p)  # added
-                        D[u] = 1 if p == -1 else D[p]+1
-                        if p != -1:
-                            P[u].append(p)
-                        i = 0
-                        while i < len(P[u]) and i < len(P[P[u][i]]):
-                            P[u].append(P[P[u][i]][i])
-                            i += 1
-                        idx += 1
-                        L[u] = idx
-                        stk.append((2, (u,)))
-                        for i in reversed(xrange(len(adj[u]))):
-                            v = adj[u][i]
-                            if v == p:
-                                continue
-                            stk.append((1, (v, u)))
-                    elif step == 2:
-                        u = args[0]
-                        R[u] = idx
-                assert(idx == N-1)
-                self.L, self.R, self.D, self.P = L, R, D, P
-
-            # Template:
-            # https://github.com/kamyu104/FacebookHackerCup-2019/blob/master/Final%20Round/little_boat_on_the_sea.py
-            def is_ancestor(self, a, b):  # includes itself
-                return self.L[a] <= self.L[b] <= self.R[b] <= self.R[a]
-
-            def lca(self, a, b):
-                if self.D[a] > self.D[b]:
-                    a, b = b, a
-                if self.is_ancestor(a, b):
-                    return a
-                for i in reversed(xrange(len(self.P[a]))):  # O(logN)
-                    if i < len(self.P[a]) and not self.is_ancestor(self.P[a][i], b):
-                        a = self.P[a][i]
-                return self.P[a][0]
-
+        def build_hld(adj, cb):
+            parent, depth, size, heavy, head, pos = [-1]*len(adj), [0]*len(adj), [1]*len(adj), [-1]*len(adj), list(range(len(adj))), [-1]*len(adj)
+            idx = -1
+            left, right = [0]*len(adj), [0]*len(adj)
+            stk = [(1, 0, -1)]
+            while stk:
+                step, u, p = stk.pop()
+                if step == 1:
+                    cb(u, p)
+                    idx += 1
+                    left[u] = idx
+                    parent[u], depth[u] = p, (depth[p]+1 if p != -1 else 0)
+                    stk.append((2, u, p))
+                    for v in adj[u]:
+                        if v == p:
+                            continue
+                        stk.append((1, v, u))
+                elif step == 2:
+                    right[u] = idx
+                    for v in adj[u]:
+                        if v == parent[u]:
+                            continue
+                        size[u] += size[v]
+                        if heavy[u] == -1 or size[v] > size[heavy[u]]:
+                            heavy[u] = v
+            idx = 0
+            stk = [(0, 0)]
+            while stk:
+                u, h = stk.pop()
+                head[u], pos[u] = h, idx
+                idx += 1
+                for v in adj[u]:
+                    if v == parent[u] or v == heavy[u]:
+                        continue
+                    stk.append((v, v))
+                if heavy[u] != -1:
+                    stk.append((heavy[u], h))
+            return parent, depth, head, pos, left, right
+    
+        def lca(u, v):
+            while head[u] != head[v]:
+                if depth[head[u]] < depth[head[v]]:
+                    u, v = v, u
+                u = parent[head[u]]
+            return u if depth[u] < depth[v] else v
 
         def callback(u, p):
             prefix[u] = (prefix[p] if p != -1 else 0)^(1<<(ord(s[u])-ord('a')))
@@ -87,7 +85,7 @@ class Solution(object):
             adj[u].append(v)
             adj[v].append(u)
         prefix = [0]*n
-        tree_infos = TreeInfos(adj, callback)
+        parent, depth, head, pos, left, right = build_hld(adj, callback)
         bit = BIT(n+1)
         result = []
         for q in queries:
@@ -100,12 +98,12 @@ class Solution(object):
                 if not diff:
                     continue
                 s[u] = c
-                bit.add(tree_infos.L[u], diff)
-                bit.add(tree_infos.R[u]+1, diff)
+                bit.add(left[u], diff)
+                bit.add(right[u]+1, diff)
             else:
                 v = int(args[2])
-                l = tree_infos.lca(u, v)
-                val = (prefix[u]^bit.query(tree_infos.L[u]))^(prefix[v]^bit.query(tree_infos.L[v]))^(1<<(ord(s[l])-ord('a')))
+                l = lca(u, v)
+                val = (prefix[u]^bit.query(left[u]))^(prefix[v]^bit.query(left[v]))^(1<<(ord(s[l])-ord('a')))
                 result.append((val&(val-1)) == 0)
         return result
 
