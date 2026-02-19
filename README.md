@@ -3,7 +3,7 @@
 ![Language](https://img.shields.io/badge/language-Python%20%2F%20Modern%20C++-orange.svg)&nbsp;
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)&nbsp;
 ![Update](https://img.shields.io/badge/update-weekly-green.svg)&nbsp;
-![Progress](https://img.shields.io/badge/progress-3836%20%2F%203836-ff69b4.svg)&nbsp;
+![Progress](https://img.shields.io/badge/progress-3846%20%2F%203846-ff69b4.svg)&nbsp;
 [![SayThanks](https://img.shields.io/badge/say-thanks-ff69f4.svg)](https://saythanks.io/to/kamyu104)&nbsp;
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=kamyu104.leetcode.solutions)
 
@@ -245,6 +245,7 @@
 3794 | [Reverse String Prefix](https://leetcode.com/problems/reverse-string-prefix/) | [C++](./C++/reverse-string-prefix.cpp) [Python](./Python/reverse-string-prefix.py) | _O(n)_ | _O(1)_ | Easy | | String
 3813 | [Vowel-Consonant Score](https://leetcode.com/problems/vowel-consonant-score/) | [C++](./C++/vowel-consonant-score.cpp) [Python](./Python/vowel-consonant-score.py) | _O(n)_ | _O(1)_ | Easy | | String
 3823 | [Reverse Letters Then Special Characters in a String](https://leetcode.com/problems/reverse-letters-then-special-characters-in-a-string/) | [C++](./C++/reverse-letters-then-special-characters-in-a-string.cpp) [Python](./Python/reverse-letters-then-special-characters-in-a-string.py) | _O(n)_ | _O(1)_ | Easy | | String
+3838 | [Weighted Word Mapping](https://leetcode.com/problems/weighted-word-mapping/) | [C++](./C++/weighted-word-mapping.cpp) [Python](./Python/weighted-word-mapping.py) | _O(n * l)_ | _O(1)_ | Easy | | String
 
 <br/>
 <div align="right">
@@ -322,6 +323,7 @@
 3559 | [Number of Ways to Assign Edge Weights II](https://leetcode.com/problems/number-of-ways-to-assign-edge-weights-ii/)| [C++](./C++/number-of-ways-to-assign-edge-weights-ii.cpp) [Python](./Python/number-of-ways-to-assign-edge-weights-ii.py)| _O(n + q)_ | _O(n + q)_ | Medium | | Tree, DFS, `Tarjan's Offline LCA Algorithm`, Combinatorics |
 3585 | [Find Weighted Median Node in Tree](https://leetcode.com/problems/find-weighted-median-node-in-tree/)| [C++](./C++/find-weighted-median-node-in-tree.cpp) [Python](./Python/find-weighted-median-node-in-tree.py)| _O(n + qlogh)_ | _O(n + q)_ | Hard | | Tree, DFS, `Tarjan's Offline LCA Algorithm`, Binary Search, Prefix Sum |
 3715 | [Sum of Perfect Square Ancestors](https://leetcode.com/problems/sum-of-perfect-square-ancestors/)| [C++](./C++/sum-of-perfect-square-ancestors.cpp) [Python](./Python/sum-of-perfect-square-ancestors.py)| precompute: _O(r)_<br>runtime: _O(nlogx)_ | _O(r + n)_ | Hard | | Tree, Number Theory, `Linear Sieve of Eratosthenes`, Freq Table, DFS |
+3841 | [Palindromic Path Queries in a Tree](https://leetcode.com/problems/palindromic-path-queries-in-a-tree/)| [C++](./C++/palindromic-path-queries-in-a-tree.cpp) [Python](./Python/palindromic-path-queries-in-a-tree.py)| _O((n + q) * logn)_ | _O(nlogn)_ | Hard | | DFS, LCA, Binary Lifting, BIT, Fenwick Tree |
 
 <br/>
 <div align="right">
@@ -393,6 +395,11 @@
 3804 | [Number of Centered Subarrays](https://leetcode.com/problems/number-of-centered-subarrays/) | [C++](./C++/number-of-centered-subarrays.cpp) [Python](./Python/number-of-centered-subarrays.py) | _O(n^2)_ | _O(n)_ | Medium | | Hash Table
 3805 | [Count Caesar Cipher Pairs](https://leetcode.com/problems/count-caesar-cipher-pairs/) | [C++](./C++/count-caesar-cipher-pairs.cpp) [Python](./Python/count-caesar-cipher-pairs.py) | _O(n * m)_ | _O(n * m)_ | Medium | | Freq Table
 3810 | [Minimum Operations to Reach Target Array](https://leetcode.com/problems/minimum-operations-to-reach-target-array/) | [C++](./C++/minimum-operations-to-reach-target-array.cpp) [Python](./Python/minimum-operations-to-reach-target-array.py) | _O(n)_ | _O(n)_ | Medium | | Hash Table
+3837 | [Delayed Count of Equal Elements](https://leetcode.com/problems/delayed-count-of-equal-elements/) | [C++](./C++/delayed-count-of-equal-elements.cpp) [Python](./Python/delayed-count-of-equal-elements.py) | _O(n)_ | _O(n)_ | Medium | 🔒 | Freq Table
+3839 | [Number of Prefix Connected Groups](https://leetcode.com/problems/number-of-prefix-connected-groups/) | [C++](./C++/number-of-prefix-connected-groups.cpp) [Python](./Python/number-of-prefix-connected-groups.py) | _O(n * k)_ | _O(n * k)_ | Medium | | Freq Table
+3842 | [Toggle Light Bulbs](https://leetcode.com/problems/toggle-light-bulbs/) | [C++](./C++/toggle-light-bulbs.cpp) [Python](./Python/toggle-light-bulbs.py) | _O(n + r)_ | _O(r)_ | Easy | | Freq Table, Sort
+3843 | [First Element with Unique Frequency](https://leetcode.com/problems/first-element-with-unique-frequency/) | [C++](./C++/first-element-with-unique-frequency.cpp) [Python](./Python/first-element-with-unique-frequency.py) | _O(n)_ | _O(n)_ | Medium | | Freq Table
+3846 | [Total Distance to Type a String Using One Finger](https://leetcode.com/problems/total-distance-to-type-a-string-using-one-finger/) | [C++](./C++/total-distance-to-type-a-string-using-one-finger.cpp) [Python](./Python/total-distance-to-type-a-string-using-one-finger.py) | _O(n)_ | _O(n)_ | Medium | 🔒 | Hash Table
 
 <br/>
 <div align="right">
@@ -587,6 +594,8 @@
 3795 | [Minimum Subarray Length With Distinct Sum At Least K](https://leetcode.com/problems/minimum-subarray-length-with-distinct-sum-at-least-k/) | [C++](./C++/minimum-subarray-length-with-distinct-sum-at-least-k.cpp) [Python](./Python/minimum-subarray-length-with-distinct-sum-at-least-k.py) | _O(n)_ | _O(n)_ | Medium | | Freq Table, Two Pointers, Sliding Window
 3802 | [Number of Ways to Paint Sheets](https://leetcode.com/problems/number-of-ways-to-paint-sheets/) | [C++](./C++/number-of-ways-to-paint-sheets.cpp) [Python](./Python/number-of-ways-to-paint-sheets.py) | _O(mlogm)_ | _O(m)_ | Hard | 🔒 | Prefix Sum, Two Pointers
 3835 | [Count Subarrays With Cost Less Than or Equal to K](https://leetcode.com/problems/count-subarrays-with-cost-less-than-or-equal-to-k/) | [C++](./C++/count-subarrays-with-cost-less-than-or-equal-to-k.cpp) [Python](./Python/count-subarrays-with-cost-less-than-or-equal-to-k.py) | _O(n)_ | _O(n)_ | Medium | | Mono Deque, Two Pointers, Sliding Window
+3844 | [Longest Almost-Palindromic Substring](https://leetcode.com/problems/longest-almost-palindromic-substring/) | [C++](./C++/longest-almost-palindromic-substring.cpp) [Python](./Python/longest-almost-palindromic-substring.py) | _O(n^2)_ | _O(1)_ | Medium | | Two Pointers
+3845 | [Maximum Subarray XOR with Bounded Range](https://leetcode.com/problems/maximum-subarray-xor-with-bounded-range/) | [C++](./C++/maximum-subarray-xor-with-bounded-range.cpp) [Python](./Python/maximum-subarray-xor-with-bounded-range.py) | _O(nlogr)_ | _O(n)_ | Hard | | Two Pointers, Sliding Window, Mono Deque, Bitmasks, Prefix Sum, Trie, Hash Table
 
 <br/>
 <div align="right">
@@ -847,6 +856,7 @@
 3811 | [Number of Alternating XOR Partitions](https://leetcode.com/problems/number-of-alternating-xor-partitions/)| [C++](./C++/number-of-alternating-xor-partitions.cpp) [Python](./Python/number-of-alternating-xor-partitions.py)| _O(n)_ | _O(1)_ | Medium | | DP, Freq Table |
 3830 | [Longest Alternating Subarray After Removing At Most One Element](https://leetcode.com/problems/longest-alternating-subarray-after-removing-at-most-one-element/)| [C++](./C++/longest-alternating-subarray-after-removing-at-most-one-element.cpp) [Python](./Python/longest-alternating-subarray-after-removing-at-most-one-element.py)| _O(n)_ | _O(1)_ | Hard | | DP, Prefix Sum |
 3836 | [Maximum Score Using Exactly K Pairs](https://leetcode.com/problems/maximum-score-using-exactly-k-pairs/)| [C++](./C++/maximum-score-using-exactly-k-pairs.cpp) [Python](./Python/maximum-score-using-exactly-k-pairs.py)| _O(n * m * k)_ | _O(min(n, m) * k)_ | Hard | | DP |
+3840 | [House Robber V](https://leetcode.com/problems/house-robber-v/)| [C++](./C++/house-robber-v.cpp) [Python](./Python/house-robber-v.py)| _O(n)_ | _O(1)_ | Medium | | DP |
 
 <br/>
 <div align="right">
