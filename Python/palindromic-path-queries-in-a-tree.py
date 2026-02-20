@@ -103,8 +103,8 @@ class Solution(object):
             else:
                 v = int(args[2])
                 l = lca(u, v)
-                val = (prefix[u]^bit.query(left[u]))^(prefix[v]^bit.query(left[v]))^(1<<(ord(s[l])-ord('a')))
-                result.append((val&(val-1)) == 0)
+                mask = (prefix[u]^bit.query(left[u]))^(prefix[v]^bit.query(left[v]))^(1<<(ord(s[l])-ord('a')))
+                result.append((mask&(mask-1)) == 0)
         return result
 
 
@@ -212,6 +212,6 @@ class Solution2(object):
             else:
                 v = int(args[2])
                 l = tree_infos.lca(u, v)
-                val = bit.query(tree_infos.L[u])^bit.query(tree_infos.L[v])^(1<<(ord(s[l])-ord('a')))
-                result.append(val == 0 or (val&(val-1)) == 0)
+                mask = bit.query(tree_infos.L[u])^bit.query(tree_infos.L[v])^(1<<(ord(s[l])-ord('a')))
+                result.append(mask == 0 or (mask&(mask-1)) == 0)
         return result
