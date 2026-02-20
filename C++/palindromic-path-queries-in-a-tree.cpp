@@ -101,8 +101,8 @@ public:
                 int v;
                 iss >> v;
                 const auto& l = lca(u, v);
-                const auto& val = (prefix[u] ^ bit.query(left[u])) ^ (prefix[v] ^ bit.query(left[v])) ^ (1 << (s[l] - 'a'));
-                result.emplace_back((val & (val - 1)) == 0);
+                const auto& mask = (prefix[u] ^ bit.query(left[u])) ^ (prefix[v] ^ bit.query(left[v])) ^ (1 << (s[l] - 'a'));
+                result.emplace_back((mask & (mask - 1)) == 0);
             }
         }
         return result;
@@ -177,8 +177,8 @@ public:
                 int v;
                 iss >> v;
                 const auto& l = tree_infos.lca(u, v);
-                const auto& val = bit.query(tree_infos.left(u)) ^ bit.query(tree_infos.left(v)) ^ (1 << (s[l] - 'a'));
-                result.emplace_back(val == 0 || (val & (val - 1)) == 0);
+                const auto& mask = bit.query(tree_infos.left(u)) ^ bit.query(tree_infos.left(v)) ^ (1 << (s[l] - 'a'));
+                result.emplace_back(mask == 0 || (mask & (mask - 1)) == 0);
             }
         }
         return result;
