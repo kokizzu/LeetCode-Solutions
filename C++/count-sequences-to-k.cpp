@@ -70,9 +70,9 @@ public:
         auto left = count(vector<int>(cbegin(nums), cbegin(nums) + (size(nums) / 2)));
         auto right = count(vector<int>(cbegin(nums) + (size(nums) / 2), cend(nums)));
         int result = 0;
-        for (const auto& [k, c] : left) {
+        for (const auto& [k, d] : left) {
             const auto& [d2, d3, d5] = k;
-            result += c * right[{c2 - d2, c3 - d3, c5 - d5}];
+            result += d * right[{c2 - d2, c3 - d3, c5 - d5}];
         }
         return result;
     }
