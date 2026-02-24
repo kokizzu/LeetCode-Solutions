@@ -1052,7 +1052,7 @@
 3616 | [Number of Student Replacements](https://leetcode.com/problems/number-of-student-replacements/) | [C++](./C++/number-of-student-replacements.cpp) [Python](./Python/number-of-student-replacements.py) | _O(n)_ | _O(1)_ | Medium | 🔒 | Simulation
 3639 | [Minimum Time to Activate String](https://leetcode.com/problems/minimum-time-to-activate-string/) | [C++](./C++/minimum-time-to-activate-string.cpp) [Python](./Python/minimum-time-to-activate-string.py) | _O(n)_ | _O(n)_ | Medium | | Backward Simulation, Doubly Linked List
 3792 | [Sum of Increasing Product Blocks](https://leetcode.com/problems/sum-of-increasing-product-blocks/) | [C++](./C++/sum-of-increasing-product-blocks.cpp) [Python](./Python/sum-of-increasing-product-blocks.py) | _O(n^2)_ | _O(n^2)_ | Medium | 🔒 | Simulation, Math
-3847 | [Find the Score Difference in a Game](https://leetcode.com/problems/find-the-score-difference-in-a-game/) | [C++](./C++/sfind-the-score-difference-in-a-game.cpp) [Python](./Python/find-the-score-difference-in-a-game.py) | _O(n)_ | _O(1)_ | Medium | | Simulation
+3847 | [Find the Score Difference in a Game](https://leetcode.com/problems/find-the-score-difference-in-a-game/) | [C++](./C++/find-the-score-difference-in-a-game.cpp) [Python](./Python/find-the-score-difference-in-a-game.py) | _O(n)_ | _O(1)_ | Medium | | Simulation
 
 <br/>
 <div align="right">
