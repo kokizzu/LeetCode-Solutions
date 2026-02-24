@@ -3,7 +3,7 @@
 ![Language](https://img.shields.io/badge/language-Python%20%2F%20Modern%20C++-orange.svg)&nbsp;
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)&nbsp;
 ![Update](https://img.shields.io/badge/update-weekly-green.svg)&nbsp;
-![Progress](https://img.shields.io/badge/progress-3846%20%2F%203846-ff69b4.svg)&nbsp;
+![Progress](https://img.shields.io/badge/progress-3851%20%2F%203851-ff69b4.svg)&nbsp;
 [![SayThanks](https://img.shields.io/badge/say-thanks-ff69f4.svg)](https://saythanks.io/to/kamyu104)&nbsp;
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=kamyu104.leetcode.solutions)
 
@@ -400,6 +400,7 @@
 3842 | [Toggle Light Bulbs](https://leetcode.com/problems/toggle-light-bulbs/) | [C++](./C++/toggle-light-bulbs.cpp) [Python](./Python/toggle-light-bulbs.py) | _O(n + r)_ | _O(r)_ | Easy | | Freq Table, Sort
 3843 | [First Element with Unique Frequency](https://leetcode.com/problems/first-element-with-unique-frequency/) | [C++](./C++/first-element-with-unique-frequency.cpp) [Python](./Python/first-element-with-unique-frequency.py) | _O(n)_ | _O(n)_ | Medium | | Freq Table
 3846 | [Total Distance to Type a String Using One Finger](https://leetcode.com/problems/total-distance-to-type-a-string-using-one-finger/) | [C++](./C++/total-distance-to-type-a-string-using-one-finger.cpp) [Python](./Python/total-distance-to-type-a-string-using-one-finger.py) | _O(n)_ | _O(n)_ | Medium | 🔒 | Hash Table
+3848 | [Check Digitorial Permutation](https://leetcode.com/problems/check-digitorial-permutation/) | [C++](./C++/check-digitorial-permutation.cpp) [Python](./Python/check-digitorial-permutation.py) | _O(logn + 10)_ | _O(10)_ | Medium | | Freq Table
 
 <br/>
 <div align="right">
@@ -596,6 +597,7 @@
 3835 | [Count Subarrays With Cost Less Than or Equal to K](https://leetcode.com/problems/count-subarrays-with-cost-less-than-or-equal-to-k/) | [C++](./C++/count-subarrays-with-cost-less-than-or-equal-to-k.cpp) [Python](./Python/count-subarrays-with-cost-less-than-or-equal-to-k.py) | _O(n)_ | _O(n)_ | Medium | | Mono Deque, Two Pointers, Sliding Window
 3844 | [Longest Almost-Palindromic Substring](https://leetcode.com/problems/longest-almost-palindromic-substring/) | [C++](./C++/longest-almost-palindromic-substring.cpp) [Python](./Python/longest-almost-palindromic-substring.py) | _O(n^2)_ | _O(1)_ | Medium | | Two Pointers
 3845 | [Maximum Subarray XOR with Bounded Range](https://leetcode.com/problems/maximum-subarray-xor-with-bounded-range/) | [C++](./C++/maximum-subarray-xor-with-bounded-range.cpp) [Python](./Python/maximum-subarray-xor-with-bounded-range.py) | _O(nlogr)_ | _O(n)_ | Hard | | Two Pointers, Sliding Window, Mono Deque, Bitmasks, Prefix Sum, Trie, Hash Table
+3851 | [Maximum Requests Without Violating the Limit](https://leetcode.com/problems/maximum-requests-without-violating-the-limit/) | [C++](./C++/maximum-requests-without-violating-the-limit.cpp) [Python](./Python/maximum-requests-without-violating-the-limit.py) | _O(nlogn)_ | _O(n)_ | Medium | 🔒 | Hash Table, Sort, Deque, Two Pointers, Sliding Window
 
 <br/>
 <div align="right">
@@ -857,6 +859,7 @@
 3830 | [Longest Alternating Subarray After Removing At Most One Element](https://leetcode.com/problems/longest-alternating-subarray-after-removing-at-most-one-element/)| [C++](./C++/longest-alternating-subarray-after-removing-at-most-one-element.cpp) [Python](./Python/longest-alternating-subarray-after-removing-at-most-one-element.py)| _O(n)_ | _O(1)_ | Hard | | DP, Prefix Sum |
 3836 | [Maximum Score Using Exactly K Pairs](https://leetcode.com/problems/maximum-score-using-exactly-k-pairs/)| [C++](./C++/maximum-score-using-exactly-k-pairs.cpp) [Python](./Python/maximum-score-using-exactly-k-pairs.py)| _O(n * m * k)_ | _O(min(n, m) * k)_ | Hard | | DP |
 3840 | [House Robber V](https://leetcode.com/problems/house-robber-v/)| [C++](./C++/house-robber-v.cpp) [Python](./Python/house-robber-v.py)| _O(n)_ | _O(1)_ | Medium | | DP |
+3850 | [Count Sequences to K](https://leetcode.com/problems/count-sequences-to-k/)| [C++](./C++/count-sequences-to-k.cpp) [Python](./Python/count-sequences-to-k.py)| _O(3^(n/2))_ | _O(3^(n/2))_ | Hard | | DP, Meet in The Middle |
 
 <br/>
 <div align="right">
@@ -962,6 +965,7 @@
 3812 | [Minimum Edge Toggles on a Tree](https://leetcode.com/problems/minimum-edge-toggles-on-a-tree/) | [C++](./C++/minimum-edge-toggles-on-a-tree.cpp) [Python](./Python/minimum-edge-toggles-on-a-tree.py) | _O(n)_ | _O(n)_ | Hard | | Greedy, Topological Sort, Bitmasks
 3816 | [Lexicographically Smallest String After Deleting Duplicate Characters](https://leetcode.com/problems/lexicographically-smallest-string-after-deleting-duplicate-characters/) | [C++](./C++/lexicographically-smallest-string-after-deleting-duplicate-characters.cpp) [Python](./Python/lexicographically-smallest-string-after-deleting-duplicate-characters.py) | _O(n + 26)_ | _O(26)_ | Hard | | Freq Table, Greedy
 3828 | [Final Element After Subarray Deletions](https://leetcode.com/problems/final-element-after-subarray-deletions/) | [C++](./C++/final-element-after-subarray-deletions.cpp) [Python](./Python/final-element-after-subarray-deletions.py) | _O(1)_ | _O(1)_ | Medium | | Greedy, Game Theory
+3849 | [Maximum Bitwise XOR After Rearrangement](https://leetcode.com/problems/maximum-bitwise-xor-after-rearrangement/) | [C++](./C++/maximum-bitwise-xor-after-rearrangement.cpp) [Python](./Python/maximum-bitwise-xor-after-rearrangement.py) | _O(n)_ | _O(1)_ | Medium | | Greedy
 
 <br/>
 <div align="right">
@@ -1048,6 +1052,7 @@
 3616 | [Number of Student Replacements](https://leetcode.com/problems/number-of-student-replacements/) | [C++](./C++/number-of-student-replacements.cpp) [Python](./Python/number-of-student-replacements.py) | _O(n)_ | _O(1)_ | Medium | 🔒 | Simulation
 3639 | [Minimum Time to Activate String](https://leetcode.com/problems/minimum-time-to-activate-string/) | [C++](./C++/minimum-time-to-activate-string.cpp) [Python](./Python/minimum-time-to-activate-string.py) | _O(n)_ | _O(n)_ | Medium | | Backward Simulation, Doubly Linked List
 3792 | [Sum of Increasing Product Blocks](https://leetcode.com/problems/sum-of-increasing-product-blocks/) | [C++](./C++/sum-of-increasing-product-blocks.cpp) [Python](./Python/sum-of-increasing-product-blocks.py) | _O(n^2)_ | _O(n^2)_ | Medium | 🔒 | Simulation, Math
+3847 | [Find the Score Difference in a Game](https://leetcode.com/problems/find-the-score-difference-in-a-game/) | [C++](./C++/sfind-the-score-difference-in-a-game.cpp) [Python](./Python/find-the-score-difference-in-a-game.py) | _O(n)_ | _O(1)_ | Medium | | Simulation
 
 <br/>
 <div align="right">
